@@ -1,11 +1,11 @@
-About r-hydrogof
-================
+About r-hydrogof-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-hydrogof-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/hzambran/hydroGOF
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-hydrogof-feedstock/blob/main/LICENSE.txt)
 
 Summary: S3 functions implementing both statistical and graphical goodness-of-fit measures between observed and simulated values, mainly oriented to be used during the calibration, validation, and application of hydrological models. Missing values in observed and/or simulated values can be removed before computations. Comments / questions / collaboration of any kind are very welcomed.
 
