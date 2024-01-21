@@ -1,4 +1,4 @@
-{% set version = '0.4-0' %}
+{% set version = "0.5-4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/hydroGOF_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/hydroGOF/hydroGOF_{{ version }}.tar.gz
-  sha256: 6a109740e36549a9369b5960b869e5e0a296261df7b6faba6cb3bd338d59883b
+  sha256: ce953c98e8ea9d39c430732425a67f2b88b722cfd7410e00777cf679f92c2e3a
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -43,11 +43,8 @@ test:
 about:
   home: https://github.com/hzambran/hydroGOF
   license: GPL-2.0-or-later
-  summary: S3 functions implementing both statistical and graphical goodness-of-fit measures
-    between observed and simulated values, mainly oriented to be used during the calibration,
-    validation, and application of hydrological models. Missing values in observed and/or
-    simulated values can be removed before computations. Comments / questions / collaboration
-    of any kind are very welcomed.
+  summary: S3 functions implementing both statistical and graphical goodness-of-fit measures between observed and simulated values, mainly oriented to be used during the calibration, validation, and application of hydrological models. Missing values in observed and/or simulated values can be removed before computations.
+    Comments / questions / collaboration of any kind are very welcomed.
   license_family: GPL2
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
