@@ -1,4 +1,4 @@
-{% set version = "0.6-0" %}
+{% set version = "0.6-0.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/hydroGOF_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/hydroGOF/hydroGOF_{{ version }}.tar.gz
-  sha256: fb1839da5d6c2d0bbff961b4bb39d149b487b59dc36017aada9d3484a842269e
+  sha256: 8101c86fddd486e132b4c07270533fb3951e0365a89bac7b88d02bd94565e96d
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
