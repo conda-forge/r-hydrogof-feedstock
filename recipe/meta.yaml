@@ -1,22 +1,26 @@
-{% set version = "0.6-0.1" %}
+{% set version = "0.7-0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-hydrogof
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/hydroGOF_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/hydroGOF/hydroGOF_{{ version }}.tar.gz
-  sha256: 8101c86fddd486e132b4c07270533fb3951e0365a89bac7b88d02bd94565e96d
+  sha256: 5533a3e9f1a9760aed8d49cada06407a8b17cb7c724f543bb743833eb6dcb1d6
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -24,12 +28,12 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-hydrotsm >=0.5_0
+    - r-hydrotsm >=0.8_6
     - r-xts >=0.8_2
     - r-zoo >=1.7_2
   run:
     - r-base
-    - r-hydrotsm >=0.5_0
+    - r-hydrotsm >=0.8_6
     - r-xts >=0.8_2
     - r-zoo >=1.7_2
 
@@ -39,10 +43,11 @@ test:
     - "\"%R%\" -e \"library('hydroGOF')\""  # [win]
 
 about:
-  home: https://github.com/hzambran/hydroGOF
+  home: https://hzambran.github.io/hydroGOF/
+  dev_url: https://github.com/hzambran/hydroGOF
   license: GPL-2.0-or-later
-  summary: S3 functions implementing both statistical and graphical goodness-of-fit measures between observed and simulated values, mainly oriented to be used during the calibration, validation, and application of hydrological models. Missing values in observed and/or simulated values can be removed before computations.
-    Comments / questions / collaboration of any kind are very welcomed.
+  summary: S3 functions implementing both statistical and graphical goodness-of-fit measures between observed and simulated values, mainly oriented to be used during the calibration, validation, and application of hydrological models. Missing values in observed and/or simulated values can be removed before 
+    computations. Comments / questions / collaboration of any kind are very welcomed.
   license_family: GPL2
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
