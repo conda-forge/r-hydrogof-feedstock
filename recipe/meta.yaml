@@ -17,6 +17,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -24,12 +28,12 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-hydrotsm >=0.5_0
+    - r-hydrotsm >=0.8_6
     - r-xts >=0.8_2
     - r-zoo >=1.7_2
   run:
     - r-base
-    - r-hydrotsm >=0.5_0
+    - r-hydrotsm >=0.8_6
     - r-xts >=0.8_2
     - r-zoo >=1.7_2
 
@@ -40,6 +44,7 @@ test:
 
 about:
   home: https://github.com/hzambran/hydroGOF
+  dev_url: https://github.com/hzambran/hydroGOF
   license: GPL-2.0-or-later
   summary: S3 functions implementing both statistical and graphical goodness-of-fit measures between observed and simulated values, mainly oriented to be used during the calibration, validation, and application of hydrological models. Missing values in observed and/or simulated values can be removed before 
     computations. Comments / questions / collaboration of any kind are very welcomed.
