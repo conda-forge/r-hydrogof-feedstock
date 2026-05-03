@@ -43,7 +43,7 @@ test:
     - "\"%R%\" -e \"library('hydroGOF')\""  # [win]
 
 about:
-  home: https://github.com/hzambran/hydroGOF
+  home: https://hzambran.github.io/hydroGOF/
   dev_url: https://github.com/hzambran/hydroGOF
   license: GPL-2.0-or-later
   summary: S3 functions implementing both statistical and graphical goodness-of-fit measures between observed and simulated values, mainly oriented to be used during the calibration, validation, and application of hydrological models. Missing values in observed and/or simulated values can be removed before 
